@@ -7,8 +7,8 @@ namespace Console_CCServer.Users
     public enum UserType
     {
         Unregistered,
-        Reseller,
-        Manufacture,
+        Customer,
+        Worker,
         Moderator
     }
     public class User
@@ -16,45 +16,13 @@ namespace Console_CCServer.Users
         #region Data fields
         protected uint id;
         protected UserType userType;
-        protected string PIB;
+        protected string Name;
+        protected string Surname;
         protected string Email;
         protected string Phone;
         #endregion
 
-        #region Constructors
-        public User(uint id, UserType userType, string PIB, string Email, string Phone)
-        {
-            this.id = id;
-            this.userType = userType;
-            this.PIB = PIB;
-            this.Email = Email;
-            this.Phone = Phone;
-        }
-        public User(uint id, UserType userType, string PIB)
-        {
-            this.id = id;
-            this.userType = userType;
-            this.PIB = PIB;
-            this.Email = "";
-            this.Phone = "";
-        }
-        public User()
-        {
-            this.id = 0;
-            this.userType = UserType.Unregistered;
-            this.PIB = "";
-            this.Email = "";
-            this.Phone = "";
-        }
-        public User(User user)
-        {
-            this.id = user.id;
-            this.userType = user.userType;
-            this.PIB = user.PIB;
-            this.Email = user.Email;
-            this.Phone = user.Phone;
-        }
-        #endregion
+        
 
         #region Setters and Getters
         public UserType GetUserType() { return this.userType; }
@@ -65,13 +33,13 @@ namespace Console_CCServer.Users
         {
             switch (UEnum)
             {
-                case "Reseller":
+                case "Customer":
                     {
-                        return UserType.Reseller;
+                        return UserType.Customer;
                     }
-                case "Manufacture":
+                case "Worker":
                     {
-                        return UserType.Manufacture;
+                        return UserType.Worker;
                     }
                 case "Moderator":
                     {

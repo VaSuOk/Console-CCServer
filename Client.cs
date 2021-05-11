@@ -26,14 +26,14 @@ namespace Console_CCServer
                         responseList = UnregisteredResponsesList.GetInstance();
                         break;
                     }
-                case UserType.Reseller:
+                case UserType.Customer:
                     {
-                        responseList = ResellersResponsesList.GetInstance();
+                        responseList = CustomerResponsesList.GetInstance();
                         break;
                     }
-                case UserType.Manufacture:
+                case UserType.Worker:
                     {
-                        responseList = ManufacturersResponsesList.GetInstance();
+                        responseList = WorkerResponsesList.GetInstance();
                         break;
                     }
                 case UserType.Moderator:
