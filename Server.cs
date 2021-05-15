@@ -24,6 +24,7 @@ namespace Console_CCServer
 
                 while (true)
                 {
+                    
                     TcpClient client = listener.AcceptTcpClient();
                     Client clientObject = new Client(client);
 

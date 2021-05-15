@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
@@ -8,6 +8,18 @@
 
   <ItemGroup>
     <PackageReference Include="MySql.Data" Version="8.0.24" />
+    <PackageReference Include="System.Drawing.Common" Version="5.0.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Client.cs" />
+    <Resource Include="Koala.jpg" />
+    <Resource Include="Server.cs" />
+    <Resource Include="Test\Koala.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Users\" />
   </ItemGroup>
 
 </Project>

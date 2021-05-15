@@ -71,7 +71,7 @@ namespace Console_CCServer
                         if (response.Name == message.Split(':')[0])
                         {
                             Console.WriteLine(builder.ToString());
-                            response.Execute(ref stream, message, ref user);
+                            response.Execute(ref client, message, ref user);
                             break;
                         }
                     }
