@@ -9,7 +9,11 @@ namespace Console_CCServer.ResponsesLists.ResponseLists
     {
         private static CustomerResponsesList resellersResponsesList;
         private CustomerResponsesList() : base() { }
-        protected override void InitResponseList() { /*ДОПИСАТИ*/}
+        protected override void InitResponseList()
+        {
+            ListResponse.Add(new GetUserData());
+            ListResponse.Add(new Logout());
+        }
         public static CustomerResponsesList GetInstance()
         {
             return resellersResponsesList == null ? resellersResponsesList = new CustomerResponsesList() : resellersResponsesList;

@@ -11,9 +11,8 @@ namespace Console_CCServer.ResponsesLists.Responses
     {
         public override string Name => "image";
 
-        public override void Execute(ref TcpClient client, string Request, ref User user)
+        public override void Execute(ref NetworkStream stream, string Request, ref User user)
         {
-            NetworkStream stream = client.GetStream();
          /*   Bitmap tImage = new Bitmap(@"D:\KPK\ДИПЛОМ\SOFT\Console CCServer\Penguins.jpg");
             byte[] bStream = ImageToByte(tImage);
              */

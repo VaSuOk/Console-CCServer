@@ -22,11 +22,15 @@ namespace Console_CCServer.Users
         protected string Surname;
         protected string Email;
         protected string Phone;
+        private int Age;
+        private string Region;
+        private string Sity;
+        private byte[] UserImage;
         #endregion
 
         #region Constructors
         public User(uint id = 0, UserType userType = UserType.Unregistered,
-            string Name = "", string Surname = "", string Email = "", string Phone = "")
+            string Name = "", string Surname = "", string Email = "", string Phone = "", int Age = 0, string Region = "", string Sity = "", byte[] imageSource = null)
         {
             this.id = id;
             this.userType = userType;
@@ -34,6 +38,10 @@ namespace Console_CCServer.Users
             this.Surname = Surname;
             this.Email = Email;
             this.Phone = Phone;
+            this.Age = Age;
+            this.Region = Region;
+            this.Sity = Sity;
+            this.UserImage = imageSource;
         }
 
         public User(User user)
@@ -44,6 +52,10 @@ namespace Console_CCServer.Users
             this.Surname = user.Surname;
             this.Email = user.Email;
             this.Phone = user.Phone;
+            this.Age = user.Age;
+            this.Region = user.Region;
+            this.Sity = user.Sity;
+            this.UserImage = user.UserImage;
         }
         #endregion
 
@@ -54,6 +66,10 @@ namespace Console_CCServer.Users
         public string GetSurname() { return Surname; }
         public string GetEmail() { return Email; }
         public string GetPhone() { return Phone; }
+        public int GetAge() { return Age; }
+        public string GetRegion() { return Region; }
+        public string GetSity() { return Sity; }
+        public byte[] GetUserImage() { return UserImage; }
         /*  нема потреби їх юзати
         public void SetID(uint id) { this.id = id; }
         public void SetUserType(UserType userType) { this.userType = userType; }

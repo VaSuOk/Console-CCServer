@@ -13,8 +13,6 @@ namespace Console_CCServer.ResponsesLists.ResponseLists
         {
             ListResponse.Add(new RegistrationResponse());
             ListResponse.Add(new LoginResponse());
-            ListResponse.Add(new TestImage());
-            Console.WriteLine("Вроді викликався цей метод!");
         }
 
         private UnregisteredResponsesList() : base() { }

@@ -19,6 +19,10 @@ namespace Console_CCServer
         {
             client = tcpClient;
             user = new User();
+            ChangeResponceList();
+        }
+        private void ChangeResponceList()
+        {
             switch (user.GetUserType())
             {
                 case UserType.Unregistered:
@@ -42,8 +46,8 @@ namespace Console_CCServer
                         break;
                     }
             }
-        }
 
+        }
         public void Process()
         {
             NetworkStream stream = null;
@@ -71,7 +75,12 @@ namespace Console_CCServer
                         if (response.Name == message.Split(':')[0])
                         {
                             Console.WriteLine(builder.ToString());
-                            response.Execute(ref client, message, ref user);
+                            response.Execute(ref stream, message, ref user);
+                            if(response.Name == "login" || response.Name == "logout")
+                            {
+                                ChangeResponceList();
+                            }
+                                
                             break;
                         }
                     }
@@ -79,7 +88,7 @@ namespace Console_CCServer
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex.Message);
+                Console.WriteLine(ex.Message +" tyt");
             }
             finally
             {

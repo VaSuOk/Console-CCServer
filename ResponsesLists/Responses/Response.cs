@@ -9,6 +9,6 @@ namespace Console_CCServer.ResponsesLists.Responses
     public abstract class Response
     {
         public abstract string Name { get; }
-        public abstract void Execute(ref TcpClient client, string Request, ref User user);
+        public abstract void Execute(ref NetworkStream stream, string Request, ref User user);
     }
 }

@@ -9,7 +9,11 @@ namespace Console_CCServer.ResponsesLists.ResponseLists
     {
         private static WorkerResponsesList manufacturersResponsesList;
         private WorkerResponsesList() : base() { }
-        protected override void InitResponseList() {}
+        protected override void InitResponseList()
+        {
+            ListResponse.Add(new GetUserData());
+            ListResponse.Add(new Logout());
+        }
         public static WorkerResponsesList GetInstance()
         {
             return manufacturersResponsesList == null ? manufacturersResponsesList = new WorkerResponsesList() : manufacturersResponsesList;

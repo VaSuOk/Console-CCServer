@@ -13,9 +13,8 @@ namespace Console_CCServer.ResponsesLists.Responses
     {
         public override string Name => "registration";
 
-        public override void Execute(ref TcpClient client, string Request, ref User user)
+        public override void Execute(ref NetworkStream stream, string Request, ref User user)
         {
-            NetworkStream stream = client.GetStream();
             byte[] data = new byte[64];
             try
             {
@@ -54,6 +53,10 @@ namespace Console_CCServer.ResponsesLists.Responses
                 DataBase.Get_Instance().Disconnect();
                 //вивід в логи або в консоль
                 Console.WriteLine(e.Message);
+            }
+            finally
+            {
+                if (stream != null) stream.Close();
             }
         }
     }
